@@ -1,0 +1,44 @@
+[2024-09-25 11:30:21,618: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 11:30:21,629: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:30:21,633: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:30:21,635: INFO: common: created directory at: artifacts]
+[2024-09-25 11:30:21,638: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 11:30:21,639: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:30:39,378: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:30:40,151: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 11:30:40,152: INFO: main: *******************]
+[2024-09-25 11:30:40,152: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 11:30:40,154: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:30:40,156: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:30:40,156: INFO: common: created directory at: artifacts]
+[2024-09-25 11:30:40,157: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 11:30:40,762: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:30:41,351: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:30:41,948: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 11:30:41,949: INFO: main: *******************]
+[2024-09-25 11:30:41,950: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 11:30:41,953: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:30:41,955: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:30:41,955: INFO: common: created directory at: artifacts]
+[2024-09-25 11:30:41,956: INFO: common: created directory at: artifacts\training]
+[2024-09-25 11:30:42,154: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 11:30:42,158: ERROR: main: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\Chest-CT-Scan-data']
+Traceback (most recent call last):
+  File "D:\end-to-end-classification\main.py", line 42, in <module>
+    model_trainer.main()
+  File "D:\end-to-end-classification\cnnClassifier\pipeline\stage_03_model_trainer.py", line 20, in main
+    training.train_valid_generator()
+  File "D:\end-to-end-classification\cnnClassifier\components\model_trainer.py", line 38, in train_valid_generator
+    self.valid_generator = valid_datagenerator.flow_from_directory(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python312\site-packages\keras\src\legacy\preprocessing\image.py", line 1138, in flow_from_directory
+    return DirectoryIterator(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python312\site-packages\keras\src\legacy\preprocessing\image.py", line 453, in __init__
+    for subdir in sorted(os.listdir(directory)):
+                         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\Chest-CT-Scan-data'

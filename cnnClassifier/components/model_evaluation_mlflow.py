@@ -5,7 +5,8 @@ import mlflow.keras
 from urllib.parse import urlparse
 from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
-
+import dagshub
+dagshub.init(repo_owner='keerthikapopuri', repo_name='end-to-end-classification', mlflow=True)
 
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
@@ -16,7 +17,7 @@ class Evaluation:
 
         datagenerator_kwargs = dict(
             rescale = 1./255,
-            validation_split=0.30
+            validation_split=1
         )
 
         dataflow_kwargs = dict(
@@ -62,13 +63,11 @@ class Evaluation:
             mlflow.log_metrics(
                 {"loss": self.score[0], "accuracy": self.score[1]}
             )
-            # Model registry does not work with file store
-            if tracking_url_type_store != "file":
-
-                # Register the model
-                # There are other ways to use the Model Registry, which depends on the use case,
-                # please refer to the doc for more information:
-                # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-                mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
+            if self.model is None:
+                print("Model is not loaded.")
             else:
-                mlflow.keras.log_model(self.model, "model")
+                print("logging model")
+                mlflow.keras.log_model(self.model, "model", registered_model_name="MobilenetModel")
+                print("model logged")
+
+            

@@ -42,3 +42,359 @@ Traceback (most recent call last):
     for subdir in sorted(os.listdir(directory)):
                          ^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\Chest-CT-Scan-data'
+[2024-09-25 11:33:56,427: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 11:33:56,429: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:33:56,432: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:33:56,434: INFO: common: created directory at: artifacts]
+[2024-09-25 11:33:56,435: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 11:33:56,436: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:34:29,824: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:34:32,446: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 11:34:32,447: INFO: main: *******************]
+[2024-09-25 11:34:32,447: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 11:34:32,450: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:34:32,454: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:34:32,455: INFO: common: created directory at: artifacts]
+[2024-09-25 11:34:32,455: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 11:34:33,664: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:34:34,571: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:34:35,045: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 11:34:35,046: INFO: main: *******************]
+[2024-09-25 11:34:35,046: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 11:34:35,049: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:34:35,052: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:34:35,052: INFO: common: created directory at: artifacts]
+[2024-09-25 11:34:35,053: INFO: common: created directory at: artifacts\training]
+[2024-09-25 11:34:35,338: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 11:34:37,029: ERROR: main: Unknown variable: <KerasVariable shape=(3, 3, 3, 64), dtype=float32, path=block1_conv1/kernel>. This optimizer can only be called for the variables it was originally built with. When working with a new set of variables, you should recreate a new optimizer instance.]
+Traceback (most recent call last):
+  File "D:\end-to-end-classification\main.py", line 42, in <module>
+    model_trainer.main()
+  File "D:\end-to-end-classification\cnnClassifier\pipeline\stage_03_model_trainer.py", line 21, in main
+    training.train()
+  File "D:\end-to-end-classification\cnnClassifier\components\model_trainer.py", line 77, in train
+    self.model.fit(
+  File "C:\Users\HP\AppData\Roaming\Python\Python312\site-packages\keras\src\utils\traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\HP\AppData\Roaming\Python\Python312\site-packages\keras\src\optimizers\base_optimizer.py", line 215, in _check_variables_are_known
+    raise ValueError(
+ValueError: Unknown variable: <KerasVariable shape=(3, 3, 3, 64), dtype=float32, path=block1_conv1/kernel>. This optimizer can only be called for the variables it was originally built with. When working with a new set of variables, you should recreate a new optimizer instance.
+[2024-09-25 11:38:19,019: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 11:38:19,021: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:38:19,022: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:38:19,023: INFO: common: created directory at: artifacts]
+[2024-09-25 11:38:19,024: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 11:38:19,024: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:38:36,752: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 11:38:37,411: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 11:38:37,412: INFO: main: *******************]
+[2024-09-25 11:38:37,413: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 11:38:37,416: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:38:37,419: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:38:37,420: INFO: common: created directory at: artifacts]
+[2024-09-25 11:38:37,420: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 11:38:37,811: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:38:38,992: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:38:40,597: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 11:38:40,599: INFO: main: *******************]
+[2024-09-25 11:38:40,600: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 11:38:40,604: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:38:40,608: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:38:40,610: INFO: common: created directory at: artifacts]
+[2024-09-25 11:38:40,611: INFO: common: created directory at: artifacts\training]
+[2024-09-25 11:38:40,935: WARNING: legacy_h5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-09-25 11:49:54,348: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 11:50:00,992: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-09-25 11:50:00,994: INFO: main: *******************]
+[2024-09-25 11:50:00,995: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 11:50:01,044: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 11:50:01,074: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 11:50:01,083: INFO: common: created directory at: artifacts]
+[2024-09-25 11:50:04,406: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 11:50:37,866: INFO: common: json file saved at: scores.json]
+[2024-09-25 11:50:37,869: INFO: common: json file saved at: scores.json]
+[2024-09-25 11:50:37,871: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:05:27,268: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:05:27,329: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:05:28,968: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:05:29,037: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:05:29,043: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:05:29,045: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:05:29,057: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:05:29,070: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:05:29,075: INFO: common: created directory at: artifacts]
+[2024-09-25 12:05:29,078: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:05:29,081: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:05:58,522: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:06:01,676: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:06:01,679: INFO: main: *******************]
+[2024-09-25 12:06:01,681: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:06:01,691: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:06:01,700: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:06:01,702: INFO: common: created directory at: artifacts]
+[2024-09-25 12:06:01,705: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:06:03,489: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:06:03,773: ERROR: main: PrepareBaseModel._prepare_full_model() got an unexpected keyword argument 'learning_rate']
+Traceback (most recent call last):
+  File "D:\end-to-end-classification\main.py", line 28, in <module>
+    prepare_base_model.main()
+  File "D:\end-to-end-classification\cnnClassifier\pipeline\stage_02_prepare_base_model.py", line 19, in main
+    prepare_base_model.update_base_model()
+  File "D:\end-to-end-classification\cnnClassifier\components\prepare_base_model.py", line 69, in update_base_model
+    self.full_model = self._prepare_full_model(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PrepareBaseModel._prepare_full_model() got an unexpected keyword argument 'learning_rate'
+[2024-09-25 12:07:34,142: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:07:34,180: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:07:35,905: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:07:35,918: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:07:35,925: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:07:35,927: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:07:35,934: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:07:35,940: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:07:35,944: INFO: common: created directory at: artifacts]
+[2024-09-25 12:07:35,946: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:07:35,948: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:08:06,176: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:08:08,420: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:08:08,422: INFO: main: *******************]
+[2024-09-25 12:08:08,423: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:08:08,428: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:08:08,433: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:08:08,435: INFO: common: created directory at: artifacts]
+[2024-09-25 12:08:08,437: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:08:09,372: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:08:09,652: ERROR: main: PrepareBaseModel._prepare_full_model() got an unexpected keyword argument 'learning_rate']
+Traceback (most recent call last):
+  File "D:\end-to-end-classification\main.py", line 28, in <module>
+    prepare_base_model.main()
+  File "D:\end-to-end-classification\cnnClassifier\pipeline\stage_02_prepare_base_model.py", line 19, in main
+    prepare_base_model.update_base_model()
+  File "D:\end-to-end-classification\cnnClassifier\components\prepare_base_model.py", line 69, in update_base_model
+    self.full_model = self._prepare_full_model(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PrepareBaseModel._prepare_full_model() got an unexpected keyword argument 'learning_rate'
+[2024-09-25 12:11:16,690: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:11:16,713: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:11:18,192: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:11:18,208: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:11:18,213: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:11:18,215: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:11:18,227: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:11:18,251: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:11:18,255: INFO: common: created directory at: artifacts]
+[2024-09-25 12:11:18,258: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:11:18,275: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:11:37,934: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:11:40,806: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:11:40,807: INFO: main: *******************]
+[2024-09-25 12:11:40,808: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:11:40,812: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:11:40,816: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:11:40,817: INFO: common: created directory at: artifacts]
+[2024-09-25 12:11:40,819: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:11:41,813: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:11:42,267: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:11:43,973: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 12:11:43,976: INFO: main: *******************]
+[2024-09-25 12:11:43,976: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 12:11:43,982: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:11:43,987: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:11:43,990: INFO: common: created directory at: artifacts]
+[2024-09-25 12:11:43,992: INFO: common: created directory at: artifacts\training]
+[2024-09-25 12:11:44,981: WARNING: legacy_h5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-09-25 12:19:10,317: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:19:13,975: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-09-25 12:19:13,977: INFO: main: *******************]
+[2024-09-25 12:19:13,979: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 12:19:14,008: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:19:14,020: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:19:14,029: INFO: common: created directory at: artifacts]
+[2024-09-25 12:19:14,737: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 12:19:48,728: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:19:48,730: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:19:48,731: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:26:28,457: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:26:28,479: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:26:29,629: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:26:29,639: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:26:29,700: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:26:29,702: INFO: main: *******************]
+[2024-09-25 12:26:29,704: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 12:26:29,713: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:26:29,720: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:26:29,724: INFO: common: created directory at: artifacts]
+[2024-09-25 12:26:32,533: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 12:27:29,761: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:27:29,762: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:27:29,763: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:32:31,437: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:32:31,456: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:32:32,510: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:32:32,521: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:32:32,526: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:32:32,527: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:32:32,534: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:32:32,548: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:32:32,549: INFO: common: created directory at: artifacts]
+[2024-09-25 12:32:32,550: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:32:32,550: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:32:54,811: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:32:55,964: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:32:55,965: INFO: main: *******************]
+[2024-09-25 12:32:55,965: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:32:55,968: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:32:55,973: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:32:55,974: INFO: common: created directory at: artifacts]
+[2024-09-25 12:32:55,975: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:33:03,159: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:33:03,436: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:33:03,557: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 12:33:03,558: INFO: main: *******************]
+[2024-09-25 12:33:03,558: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 12:33:03,560: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:33:03,560: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:33:03,561: INFO: common: created directory at: artifacts]
+[2024-09-25 12:33:03,561: INFO: common: created directory at: artifacts\training]
+[2024-09-25 12:33:03,937: WARNING: legacy_h5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-09-25 12:33:34,548: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:33:34,825: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-09-25 12:33:34,825: INFO: main: *******************]
+[2024-09-25 12:33:34,826: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 12:33:34,828: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:33:34,839: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:33:34,840: INFO: common: created directory at: artifacts]
+[2024-09-25 12:33:35,620: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 12:33:38,744: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:33:38,745: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:33:38,745: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:39:40,183: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:39:40,189: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:39:41,142: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:39:41,151: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:39:41,154: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:39:41,156: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:39:41,161: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:39:41,166: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:39:41,168: INFO: common: created directory at: artifacts]
+[2024-09-25 12:39:41,170: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:39:41,171: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:40:00,231: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:40:01,282: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:40:01,283: INFO: main: *******************]
+[2024-09-25 12:40:01,283: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:40:01,285: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:40:01,286: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:40:01,287: INFO: common: created directory at: artifacts]
+[2024-09-25 12:40:01,287: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:40:01,820: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:40:02,086: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:40:02,207: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 12:40:02,207: INFO: main: *******************]
+[2024-09-25 12:40:02,208: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 12:40:02,209: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:40:02,211: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:40:02,212: INFO: common: created directory at: artifacts]
+[2024-09-25 12:40:02,213: INFO: common: created directory at: artifacts\training]
+[2024-09-25 12:40:02,696: WARNING: legacy_h5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-09-25 12:40:32,818: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:40:33,076: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-09-25 12:40:33,077: INFO: main: *******************]
+[2024-09-25 12:40:33,077: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 12:40:33,079: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:40:33,081: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:40:33,082: INFO: common: created directory at: artifacts]
+[2024-09-25 12:40:33,810: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 12:40:37,218: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:40:37,220: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:40:37,220: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:49:17,540: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2024-09-25 12:49:17,552: INFO: helpers: Accessing as keerthikapopuri]
+[2024-09-25 12:49:18,502: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/keerthikapopuri/end-to-end-classification "HTTP/1.1 200 OK"]
+[2024-09-25 12:49:18,513: INFO: helpers: Initialized MLflow to track repo "keerthikapopuri/end-to-end-classification"]
+[2024-09-25 12:49:18,515: INFO: helpers: Repository keerthikapopuri/end-to-end-classification initialized!]
+[2024-09-25 12:49:18,515: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-09-25 12:49:18,518: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:49:18,527: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:49:18,528: INFO: common: created directory at: artifacts]
+[2024-09-25 12:49:18,528: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-09-25 12:49:18,529: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:49:36,831: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1wc0CnmmGTlJ1QSqsPHjOxBJkBWluP-qv/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-09-25 12:49:37,618: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-09-25 12:49:37,619: INFO: main: *******************]
+[2024-09-25 12:49:37,620: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-09-25 12:49:37,622: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:49:37,624: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:49:37,624: INFO: common: created directory at: artifacts]
+[2024-09-25 12:49:37,626: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-09-25 12:49:38,693: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:49:39,255: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:49:39,752: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-09-25 12:49:39,754: INFO: main: *******************]
+[2024-09-25 12:49:39,755: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-09-25 12:49:39,760: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:49:39,766: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:49:39,768: INFO: common: created directory at: artifacts]
+[2024-09-25 12:49:39,771: INFO: common: created directory at: artifacts\training]
+[2024-09-25 12:49:40,435: WARNING: legacy_h5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-09-25 12:52:01,842: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-09-25 12:52:03,167: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-09-25 12:52:03,169: INFO: main: *******************]
+[2024-09-25 12:52:03,169: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-09-25 12:52:03,186: INFO: common: yaml file: D:\end-to-end-classification\config\config.yaml loaded successfully]
+[2024-09-25 12:52:03,196: INFO: common: yaml file: D:\end-to-end-classification\params.yaml loaded successfully]
+[2024-09-25 12:52:03,202: INFO: common: created directory at: artifacts]
+[2024-09-25 12:52:06,229: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-09-25 12:52:25,651: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:52:25,653: INFO: common: json file saved at: scores.json]
+[2024-09-25 12:53:35,105: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
